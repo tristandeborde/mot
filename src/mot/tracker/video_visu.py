@@ -14,6 +14,7 @@ def get_icons():
     home = os.path.expanduser("~")
     if not os.path.isdir(os.path.join(home, ".mot/")):
         os.mkdir(os.path.join(home, ".mot/"))
+    if not os.path.isdir(os.path.join(home, ".mot/resources")):
         os.mkdir(os.path.join(home, ".mot/resources"))
 
     for k,v in ICONS.items():
@@ -78,12 +79,14 @@ class VideoVisu():
         self.thicknessUpdate = 3
         self.color = (238, 221, 192) # A surfrider color
         self.icons = get_icons()
-        self.classes_to_icons = {'bottles':icons[0], 'fragments':icons[1], 'others':icons[2]}
+        self.classes_to_icons = {'bottles':self.icons[0], 'fragments':self.icons[1], 'others':self.icons[2]}
         self.video_w = video_w
         self.video_h = video_h
         self.video_fps = video_fps
         self.tracking_result = tracking_result
         self.detection_image_size = (1024, 768)
+        self.frames_to_boxes_dict = None
+        self.frames_to_update_hud = None
 
     def process_tracking_result(self):
         """Main function which processes the tracking result to:
@@ -97,20 +100,31 @@ class VideoVisu():
 
         Returns:
 
-        - A dictionnary frames_id to boxes, including coordinates and labels
+        - Nothing, fills the two dictionnaries `frames_to_boxes_dict` and `frames_to_update_hud`
 
         """
         fps_ratio = self.video_fps / self.tracking_result["fps"]
         frames_to_boxes_dict = {}
+        self.frames_to_update_hud = {}
+        last_hud_info = {"bottles": 0, "fragments":0, "others":0}
 
         for trash_result in self.tracking_result["detected_trash"]:
+            # Place the interpolated frames into frames_to_boxes_dict
             interpolated_frames = self.interpolate_trash_frames(trash_result, fps_ratio)
             for [idx, box] in interpolated_frames:
                 if idx in frames_to_boxes_dict:
                     frames_to_boxes_dict[idx].append({"coords": box, "label":trash_result["label"]})
                 else:
                     frames_to_boxes_dict[idx] = [{"coords": box, "label":trash_result["label"]}]
-        return frames_to_boxes_dict
+
+            # update the hub
+            idx = interpolated_frames[0][0]
+            label = trash_result["label"]
+            new_hud_info = last_hud_info.copy()
+            new_hud_info[label] += 1
+            self.frames_to_update_hud[idx] = new_hud_info
+
+        self.frames_to_boxes_dict = frames_to_boxes_dict
 
     def interpolate_trash_frames(self, trash, fps_ratio):
         """Interpolates between frames of a detected trash with a given fps ratio
@@ -127,7 +141,7 @@ class VideoVisu():
         """
         new_frame_to_box = []
         # For each frame in the detected trash
-        for k,v in sorted(trash_result["frame_to_box"].items(), key=lambda x:x[0]):
+        for k,v in sorted(trash["frame_to_box"].items(), key=lambda x:x[0]):
             new_idx = int(int(k)*fps_ratio)
             if new_frame_to_box:
                 [old_idx, old_v] = new_frame_to_box[-1]
@@ -167,9 +181,9 @@ class VideoVisu():
         # Black background of hud
         cv2.rectangle(im,(30,30),(200,200),(0,0,0),-1)
         # Add icons
-        overlay_im_to_background(im, classes_to_icons["bottles"], 65,40)
-        overlay_im_to_background(im, classes_to_icons["fragments"], 60,95)
-        overlay_im_to_background(im, classes_to_icons["others"], 60,150)
+        overlay_im_to_background(im, self.classes_to_icons["bottles"], 65,40)
+        overlay_im_to_background(im, self.classes_to_icons["fragments"], 60,95)
+        overlay_im_to_background(im, self.classes_to_icons["others"], 60,150)
         # Add counts
         thickness = self.thicknessUpdate if "update" in hud_info else self.thickness
         cv2.putText(im, str(hud_info["bottles"]), (110,75), self.font, self.fontScale, self.color, thickness, cv2.LINE_AA)
@@ -194,3 +208,32 @@ class VideoVisu():
             icon = self.classes_to_icons[bbox["label"]]
             overlay_im_to_background(im, icon, l[0], l[1] - icon.shape[0] - 5)
             cv2.rectangle(im,(l[0],l[1]),(l[2],l[3]),self.color,2)
+
+    def draw_all(self, im, idx):
+        """Draws everything needed on a video frame at given idx.
+        Assumes frames_to_boxes_dict and frames_to_update_hud are defined by
+        having run `process_tracking_result`
+
+        Arguments:
+
+        - im: image (numpy array)
+        - idx: frame index of video
+
+        Returns:
+
+        - Nothing, modifies the image inplace
+        """
+        if idx in self.frames_to_boxes_dict:
+            self.draw_boxes(im, self.frames_to_boxes_dict[idx])
+
+        hud_info = {"bottles": 0, "fragments":0, "others":0}
+        if idx in self.frames_to_update_hud:
+            hud_info = self.frames_to_update_hud[idx].copy()
+            hud_info["update"] = True
+        else:
+            # find the last hud info
+            for x in self.frames_to_update_hud.keys():
+                if idx < x:
+                    break
+                hud_info = self.frames_to_update_hud[x]
+        self.draw_hud(im, hud_info)
