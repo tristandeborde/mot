@@ -177,7 +177,17 @@ def handle_file(file: FileStorage,
         logger.info("Starting tracking.")
         object_tracker = ObjectTracking(filename, image_paths, inference_outputs, fps=fps)
         logger.info("Tracking finished.")
-        return object_tracker.json_result()
+        tracking_result = object_tracker.json_result()
+
+        # Draw results on images // TODO: test on smic
+        visu = video_visu.VideoVisu(1920, 1080, 30, tracking_result)
+        visu.process_tracking_result()
+        video = cv2.VideoWriter('output.mp4',-1,1,(1920, 1080))
+        for ix, path in enumerate(image_paths):
+            cv2.imread(path)
+            visu.draw_all(im, ix)
+            video.write(im)
+        return send_file("output.mp4", "video/mp4")
     else:
         raise NotImplementedError(file_type)
 
