@@ -6,7 +6,7 @@ from typing import Dict, List
 
 import cv2
 import numpy as np
-from flask import request
+from flask import request, send_file
 from tensorpack.utils import logger
 from tqdm import tqdm
 from werkzeug import FileStorage
