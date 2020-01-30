@@ -1,0 +1,1506 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Model Mrcnn - mot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../../../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#module-motobject_detectionmodelingmodel_mrcnn" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../../.." title="mot" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              mot
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Model Mrcnn
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/surfriderfoundationeurope/mot/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    mot
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../../.." title="mot" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    mot
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/surfriderfoundationeurope/mot/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    mot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Mot
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Mot
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2" type="checkbox" id="nav-3-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-2">
+      Object Detection
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-2">
+        Object Detection
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../common/" title="Common" class="md-nav__link">
+      Common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/" title="Data" class="md-nav__link">
+      Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../eval/" title="Eval" class="md-nav__link">
+      Eval
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../predict/" title="Predict" class="md-nav__link">
+      Predict
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../preprocessing/" title="Preprocessing" class="md-nav__link">
+      Preprocessing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../query_server/" title="Query Server" class="md-nav__link">
+      Query Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../train/" title="Train" class="md-nav__link">
+      Train
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../viz/" title="Viz" class="md-nav__link">
+      Viz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-11" type="checkbox" id="nav-3-1-2-11">
+    
+    <label class="md-nav__link" for="nav-3-1-2-11">
+      Dataset
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-11">
+        Dataset
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataset/dataset/" title="Dataset" class="md-nav__link">
+      Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataset/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataset/mot/" title="Mot" class="md-nav__link">
+      Mot
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-12" type="checkbox" id="nav-3-1-2-12" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-2-12">
+      Modeling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-12">
+        Modeling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backbone/" title="Backbone" class="md-nav__link">
+      Backbone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generalized_rcnn/" title="Generalized Rcnn" class="md-nav__link">
+      Generalized Rcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_box/" title="Model Box" class="md-nav__link">
+      Model Box
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_cascade/" title="Model Cascade" class="md-nav__link">
+      Model Cascade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_fpn/" title="Model Fpn" class="md-nav__link">
+      Model Fpn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_frcnn/" title="Model Frcnn" class="md-nav__link">
+      Model Frcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Model Mrcnn
+      </label>
+    
+    <a href="./" title="Model Mrcnn" class="md-nav__link md-nav__link--active">
+      Model Mrcnn
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_loss" class="md-nav__link">
+    maskrcnn_loss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_up4conv_gn_head" class="md-nav__link">
+    maskrcnn_up4conv_gn_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_up4conv_head" class="md-nav__link">
+    maskrcnn_up4conv_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_upxconv_head" class="md-nav__link">
+    maskrcnn_upXconv_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpackbits_masks" class="md-nav__link">
+    unpackbits_masks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_rpn/" title="Model Rpn" class="md-nav__link">
+      Model Rpn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-13" type="checkbox" id="nav-3-1-2-13">
+    
+    <label class="md-nav__link" for="nav-3-1-2-13">
+      Utils
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-13">
+        Utils
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/box_ops/" title="Box Ops" class="md-nav__link">
+      Box Ops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/np_box_ops/" title="Np Box Ops" class="md-nav__link">
+      Np Box Ops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-3" type="checkbox" id="nav-3-1-3">
+    
+    <label class="md-nav__link" for="nav-3-1-3">
+      Serving
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-3">
+        Serving
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../serving/app/" title="App" class="md-nav__link">
+      App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../serving/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../serving/inference/" title="Inference" class="md-nav__link">
+      Inference
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-4" type="checkbox" id="nav-3-1-4">
+    
+    <label class="md-nav__link" for="nav-3-1-4">
+      Tracker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-4">
+        Tracker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/camera_flow/" title="Camera Flow" class="md-nav__link">
+      Camera Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/tracker/" title="Tracker" class="md-nav__link">
+      Tracker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/video_utils/" title="Video Utils" class="md-nav__link">
+      Video Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_loss" class="md-nav__link">
+    maskrcnn_loss
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_up4conv_gn_head" class="md-nav__link">
+    maskrcnn_up4conv_gn_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_up4conv_head" class="md-nav__link">
+    maskrcnn_up4conv_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maskrcnn_upxconv_head" class="md-nav__link">
+    maskrcnn_upXconv_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpackbits_masks" class="md-nav__link">
+    unpackbits_masks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/surfriderfoundationeurope/mot/edit/master/reference/mot/object_detection/modeling/model_mrcnn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="module-motobject_detectionmodelingmodel_mrcnn">Module mot.object_detection.modeling.model_mrcnn</h1>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="s s-Atom">#</span> <span class="s s-Atom">-*-</span> <span class="nn">coding</span><span class="p">:</span> <span class="s s-Atom">utf</span><span class="o">-</span><span class="mi">8</span> <span class="s s-Atom">-*-</span>
+
+<span class="s s-Atom">import</span> <span class="s s-Atom">tensorflow</span> <span class="s s-Atom">as</span> <span class="s s-Atom">tf</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">tensorpack</span><span class="p">.</span><span class="s s-Atom">models</span> <span class="s s-Atom">import</span> <span class="nv">Conv2D</span><span class="p">,</span> <span class="nv">Conv2DTranspose</span><span class="p">,</span> <span class="s s-Atom">layer_register</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">tensorpack</span><span class="p">.</span><span class="s s-Atom">tfutils</span><span class="p">.</span><span class="s s-Atom">argscope</span> <span class="s s-Atom">import</span> <span class="s s-Atom">argscope</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">tensorpack</span><span class="p">.</span><span class="s s-Atom">tfutils</span><span class="p">.</span><span class="s s-Atom">common</span> <span class="s s-Atom">import</span> <span class="s s-Atom">get_tf_version_tuple</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">tensorpack</span><span class="p">.</span><span class="s s-Atom">tfutils</span><span class="p">.</span><span class="s s-Atom">scope_utils</span> <span class="s s-Atom">import</span> <span class="s s-Atom">under_name_scope</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">tensorpack</span><span class="p">.</span><span class="s s-Atom">tfutils</span><span class="p">.</span><span class="s s-Atom">summary</span> <span class="s s-Atom">import</span> <span class="s s-Atom">add_moving_summary</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">mot</span><span class="p">.</span><span class="s s-Atom">object_detection</span><span class="p">.</span><span class="s s-Atom">modeling</span><span class="p">.</span><span class="s s-Atom">backbone</span> <span class="s s-Atom">import</span> <span class="nv">GroupNorm</span>
+
+<span class="s s-Atom">from</span> <span class="s s-Atom">mot</span><span class="p">.</span><span class="s s-Atom">object_detection</span><span class="p">.</span><span class="s s-Atom">config</span> <span class="s s-Atom">import</span> <span class="s s-Atom">config</span> <span class="s s-Atom">as</span> <span class="s s-Atom">cfg</span>
+
+<span class="s s-Atom">@</span><span class="nf">under_name_scope</span><span class="p">()</span>
+
+<span class="s s-Atom">def</span> <span class="nf">maskrcnn_loss</span><span class="p">(</span><span class="s s-Atom">mask_logits</span><span class="p">,</span> <span class="s s-Atom">fg_labels</span><span class="p">,</span> <span class="s s-Atom">fg_target_masks</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">    Args:</span>
+
+<span class="s2">        mask_logits: #fg x #category xhxw</span>
+
+<span class="s2">        fg_labels: #fg, in 1~#class, int64</span>
+
+<span class="s2">        fg_target_masks: #fgxhxw, float32</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">if</span> <span class="nf">get_tf_version_tuple</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">mask_logits</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">gather</span><span class="p">(</span>
+
+            <span class="s s-Atom">mask_logits</span><span class="p">,</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span><span class="s s-Atom">fg_labels</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span> <span class="s s-Atom">batch_dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="nn">else</span><span class="p">:</span>
+
+        <span class="s s-Atom">indices</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">stack</span><span class="p">([</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">range</span><span class="p">(</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="s s-Atom">fg_labels</span><span class="p">,</span> <span class="s s-Atom">out_type</span><span class="o">=</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">int64</span><span class="p">)),</span>
+
+                            <span class="s s-Atom">fg_labels</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="s s-Atom">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="s s-Atom">#</span> <span class="s s-Atom">#fgx2</span>
+
+        <span class="s s-Atom">mask_logits</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">gather_nd</span><span class="p">(</span><span class="s s-Atom">mask_logits</span><span class="p">,</span> <span class="s s-Atom">indices</span><span class="p">)</span>  <span class="s s-Atom">#</span> <span class="s s-Atom">#fg</span> <span class="s s-Atom">x</span> <span class="s s-Atom">h</span> <span class="s s-Atom">x</span> <span class="s s-Atom">w</span>
+
+    <span class="s s-Atom">mask_logits</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">squeeze</span><span class="p">(</span><span class="s s-Atom">mask_logits</span><span class="p">,</span> <span class="s s-Atom">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="s s-Atom">mask_probs</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">sigmoid</span><span class="p">(</span><span class="s s-Atom">mask_logits</span><span class="p">)</span>
+
+    <span class="s s-Atom">#</span> <span class="s s-Atom">add</span> <span class="s s-Atom">some</span> <span class="s s-Atom">training</span> <span class="s s-Atom">visualizations</span> <span class="s s-Atom">to</span> <span class="s s-Atom">tensorboard</span>
+
+    <span class="s s-Atom">with</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">name_scope</span><span class="p">(</span><span class="s s-Atom">&#39;mask_viz&#39;</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">viz</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="s s-Atom">fg_target_masks</span><span class="p">,</span> <span class="s s-Atom">mask_probs</span><span class="p">],</span> <span class="s s-Atom">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="s s-Atom">viz</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">expand_dims</span><span class="p">(</span><span class="s s-Atom">viz</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+        <span class="s s-Atom">viz</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="s s-Atom">viz</span> <span class="o">*</span> <span class="mi">255</span><span class="p">,</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">uint8</span><span class="p">,</span> <span class="s s-Atom">name=&#39;viz&#39;</span><span class="p">)</span>
+
+        <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">summary</span><span class="p">.</span><span class="nf">image</span><span class="p">(</span><span class="s s-Atom">&#39;mask_truth|pred&#39;</span><span class="p">,</span> <span class="s s-Atom">viz</span><span class="p">,</span> <span class="s s-Atom">max_outputs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+    <span class="s s-Atom">loss</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">nn</span><span class="p">.</span><span class="nf">sigmoid_cross_entropy_with_logits</span><span class="p">(</span>
+
+        <span class="s s-Atom">labels</span><span class="o">=</span><span class="s s-Atom">fg_target_masks</span><span class="p">,</span> <span class="s s-Atom">logits</span><span class="o">=</span><span class="s s-Atom">mask_logits</span><span class="p">)</span>
+
+    <span class="s s-Atom">loss</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reduce_mean</span><span class="p">(</span><span class="s s-Atom">loss</span><span class="p">,</span> <span class="s s-Atom">name=&#39;maskrcnn_loss&#39;</span><span class="p">)</span>
+
+    <span class="s s-Atom">pred_label</span> <span class="o">=</span> <span class="s s-Atom">mask_probs</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+
+    <span class="s s-Atom">truth_label</span> <span class="o">=</span> <span class="s s-Atom">fg_target_masks</span> <span class="o">&gt;</span> <span class="mf">0.5</span>
+
+    <span class="s s-Atom">accuracy</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reduce_mean</span><span class="p">(</span>
+
+        <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">equal</span><span class="p">(</span><span class="s s-Atom">pred_label</span><span class="p">,</span> <span class="s s-Atom">truth_label</span><span class="p">),</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">float32</span><span class="p">),</span>
+
+        <span class="s s-Atom">name=&#39;accuracy&#39;</span><span class="p">)</span>
+
+    <span class="s s-Atom">pos_accuracy</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">logical_and</span><span class="p">(</span>
+
+        <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">equal</span><span class="p">(</span><span class="s s-Atom">pred_label</span><span class="p">,</span> <span class="s s-Atom">truth_label</span><span class="p">),</span>
+
+        <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">equal</span><span class="p">(</span><span class="s s-Atom">truth_label</span><span class="p">,</span> <span class="nv">True</span><span class="p">))</span>
+
+    <span class="s s-Atom">pos_accuracy</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reduce_mean</span><span class="p">(</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="s s-Atom">pos_accuracy</span><span class="p">,</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">float32</span><span class="p">),</span> <span class="s s-Atom">name=&#39;pos_accuracy&#39;</span><span class="p">)</span>
+
+    <span class="s s-Atom">fg_pixel_ratio</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reduce_mean</span><span class="p">(</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="s s-Atom">truth_label</span><span class="p">,</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">float32</span><span class="p">),</span> <span class="s s-Atom">name=&#39;fg_pixel_ratio&#39;</span><span class="p">)</span>
+
+    <span class="nf">add_moving_summary</span><span class="p">(</span><span class="s s-Atom">loss</span><span class="p">,</span> <span class="s s-Atom">accuracy</span><span class="p">,</span> <span class="s s-Atom">fg_pixel_ratio</span><span class="p">,</span> <span class="s s-Atom">pos_accuracy</span><span class="p">)</span>
+
+    <span class="s s-Atom">return</span> <span class="s s-Atom">loss</span>
+
+<span class="s s-Atom">@</span><span class="nf">layer_register</span><span class="p">(</span><span class="s s-Atom">log_shape</span><span class="o">=</span><span class="nv">True</span><span class="p">)</span>
+
+<span class="s s-Atom">def</span> <span class="nf">maskrcnn_upXconv_head</span><span class="p">(</span><span class="s s-Atom">feature</span><span class="p">,</span> <span class="s s-Atom">num_category</span><span class="p">,</span> <span class="s s-Atom">num_convs</span><span class="p">,</span> <span class="s s-Atom">norm</span><span class="o">=</span><span class="nv">None</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">    Args:</span>
+
+<span class="s2">        feature (NxCx s x s): size is 7 in C4 models and 14 in FPN models.</span>
+
+<span class="s2">        num_category(int):</span>
+
+<span class="s2">        num_convs (int): number of convolution layers</span>
+
+<span class="s2">        norm (str or None): either None or &#39;GN&#39;</span>
+
+<span class="s2">    Returns:</span>
+
+<span class="s2">        mask_logits (N x num_category x 2s x 2s):</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">assert</span> <span class="s s-Atom">norm</span> <span class="s s-Atom">in</span> <span class="p">[</span><span class="nv">None</span><span class="p">,</span> <span class="s s-Atom">&#39;GN&#39;</span><span class="p">],</span> <span class="s s-Atom">norm</span>
+
+    <span class="s s-Atom">l</span> <span class="o">=</span> <span class="s s-Atom">feature</span>
+
+    <span class="s s-Atom">with</span> <span class="nf">argscope</span><span class="p">([</span><span class="nv">Conv2D</span><span class="p">,</span> <span class="nv">Conv2DTranspose</span><span class="p">],</span> <span class="s s-Atom">data_format=&#39;channels_first&#39;</span><span class="p">,</span>
+
+                  <span class="s s-Atom">kernel_initializer</span><span class="o">=</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">variance_scaling_initializer</span><span class="p">(</span>
+
+                      <span class="s s-Atom">scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="s s-Atom">mode=&#39;fan_out&#39;</span><span class="p">,</span>
+
+                      <span class="s s-Atom">distribution=&#39;untruncated_normal&#39;</span> <span class="s s-Atom">if</span> <span class="nf">get_tf_version_tuple</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span> <span class="s s-Atom">else</span> <span class="s s-Atom">&#39;normal&#39;</span><span class="p">))</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">#</span> <span class="s s-Atom">c2&#39;s MSRAFill is fan_out</span>
+
+<span class="s s-Atom">        for k in range(num_convs):</span>
+
+<span class="s s-Atom">            l = Conv2D(&#39;fcn</span><span class="p">{}</span><span class="s s-Atom">&#39;.format(k), l, cfg.MRCNN.HEAD_DIM, 3, activation=tf.nn.relu)</span>
+
+<span class="s s-Atom">            if norm is not None:</span>
+
+<span class="s s-Atom">                l = GroupNorm(&#39;gn</span><span class="p">{}</span><span class="s s-Atom">&#39;.format(k), l)</span>
+
+<span class="s s-Atom">        l = Conv2DTranspose(&#39;deconv&#39;, l, cfg.MRCNN.HEAD_DIM, 2, strides=2, activation=tf.nn.relu)</span>
+
+<span class="s s-Atom">        l = Conv2D(&#39;conv&#39;, l, num_category, 1, kernel_initializer=tf.random_normal_initializer(stddev=0.001))</span>
+
+<span class="s s-Atom">    return l</span>
+
+<span class="s s-Atom">def maskrcnn_up4conv_head(*args, **kwargs):</span>
+
+<span class="s s-Atom">    return maskrcnn_upXconv_head(*args, num_convs=4, **kwargs)</span>
+
+<span class="s s-Atom">def maskrcnn_up4conv_gn_head(*args, **kwargs):</span>
+
+<span class="s s-Atom">    return maskrcnn_upXconv_head(*args, num_convs=4, norm=&#39;</span><span class="nv">GN</span><span class="err">&#39;</span><span class="p">,</span> <span class="s s-Atom">**kwargs</span><span class="p">)</span>
+
+<span class="s s-Atom">def</span> <span class="nf">unpackbits_masks</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">    Args:</span>
+
+<span class="s2">        masks (Tensor): uint8 Tensor of shape N, H, W. The last dimension is packed bits.</span>
+
+<span class="s2">    Returns:</span>
+
+<span class="s2">        masks (Tensor): bool Tensor of shape N, H, 8*W.</span>
+
+<span class="s2">    This is a reverse operation of `np.packbits`</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">assert</span> <span class="s s-Atom">masks</span><span class="p">.</span><span class="s s-Atom">dtype</span> <span class="o">==</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">uint8</span><span class="p">,</span> <span class="s s-Atom">masks</span>
+
+    <span class="s s-Atom">bits</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">constant</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s s-Atom">dtype</span><span class="o">=</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">uint8</span><span class="p">)</span>
+
+    <span class="s s-Atom">unpacked</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">bitwise</span><span class="p">.</span><span class="nf">bitwise_and</span><span class="p">(</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">expand_dims</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s s-Atom">bits</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+    <span class="s s-Atom">unpacked</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span>
+
+        <span class="s s-Atom">unpacked</span><span class="p">,</span>
+
+        <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">shape</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">)[:-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span> <span class="o">*</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">shape</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]],</span> <span class="s s-Atom">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="s s-Atom">return</span> <span class="s s-Atom">unpacked</span>
+</pre></div>
+
+
+</details>
+<h2 id="functions">Functions</h2>
+<h3 id="maskrcnn_loss">maskrcnn_loss</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">maskrcnn_loss</span><span class="p">(</span>
+    <span class="n">mask_logits</span><span class="p">,</span>
+    <span class="n">fg_labels</span><span class="p">,</span>
+    <span class="n">fg_target_masks</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Args:
+mask_logits: #fg x #category xhxw
+fg_labels: #fg, in 1~#class, int64
+fg_target_masks: #fgxhxw, float32</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="nv">@under_name_scope</span><span class="p">()</span><span class="w"></span>
+
+<span class="n">def</span><span class="w"> </span><span class="n">maskrcnn_loss</span><span class="p">(</span><span class="n">mask_logits</span><span class="p">,</span><span class="w"> </span><span class="n">fg_labels</span><span class="p">,</span><span class="w"> </span><span class="n">fg_target_masks</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">    Args:</span>
+
+<span class="ss">        mask_logits: #fg x #category xhxw</span>
+
+<span class="ss">        fg_labels: #fg, in 1~#class, int64</span>
+
+<span class="ss">        fg_target_masks: #fgxhxw, float32</span>
+
+<span class="ss">    &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">get_tf_version_tuple</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">14</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">mask_logits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">mask_logits</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">fg_labels</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">[</span><span class="n">-1, 1</span><span class="o">]</span><span class="p">),</span><span class="w"> </span><span class="n">batch_dims</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">else</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">indices</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">stack</span><span class="p">(</span><span class="o">[</span><span class="n">tf.range(tf.size(fg_labels, out_type=tf.int64)),</span>
+
+<span class="n">                            fg_labels - 1</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">#fgx2</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">mask_logits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">gather_nd</span><span class="p">(</span><span class="n">mask_logits</span><span class="p">,</span><span class="w"> </span><span class="n">indices</span><span class="p">)</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="n">#fg</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">h</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">w</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">mask_logits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">squeeze</span><span class="p">(</span><span class="n">mask_logits</span><span class="p">,</span><span class="w"> </span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">mask_probs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">mask_logits</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="ow">some</span><span class="w"> </span><span class="n">training</span><span class="w"> </span><span class="n">visualizations</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">tensorboard</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">with</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s1">&#39;mask_viz&#39;</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="o">[</span><span class="n">fg_target_masks, mask_probs</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">viz</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">viz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="n">viz</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">uint8</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;viz&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">tf</span><span class="p">.</span><span class="n">summary</span><span class="p">.</span><span class="nc">image</span><span class="p">(</span><span class="s1">&#39;mask_truth|pred&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">viz</span><span class="p">,</span><span class="w"> </span><span class="n">max_outputs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">loss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">nn</span><span class="p">.</span><span class="n">sigmoid_cross_entropy_with_logits</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">labels</span><span class="o">=</span><span class="n">fg_target_masks</span><span class="p">,</span><span class="w"> </span><span class="n">logits</span><span class="o">=</span><span class="n">mask_logits</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">loss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;maskrcnn_loss&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">pred_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mask_probs</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.5</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">truth_label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fg_target_masks</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.5</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">accuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">pred_label</span><span class="p">,</span><span class="w"> </span><span class="n">truth_label</span><span class="p">),</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">),</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">pos_accuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">logical_and</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">tf</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">pred_label</span><span class="p">,</span><span class="w"> </span><span class="n">truth_label</span><span class="p">),</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">tf</span><span class="p">.</span><span class="n">equal</span><span class="p">(</span><span class="n">truth_label</span><span class="p">,</span><span class="w"> </span><span class="k">True</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">pos_accuracy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="n">pos_accuracy</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;pos_accuracy&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">fg_pixel_ratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">reduce_mean</span><span class="p">(</span><span class="n">tf</span><span class="p">.</span><span class="nf">cast</span><span class="p">(</span><span class="n">truth_label</span><span class="p">,</span><span class="w"> </span><span class="n">tf</span><span class="p">.</span><span class="n">float32</span><span class="p">),</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;fg_pixel_ratio&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">add_moving_summary</span><span class="p">(</span><span class="n">loss</span><span class="p">,</span><span class="w"> </span><span class="n">accuracy</span><span class="p">,</span><span class="w"> </span><span class="n">fg_pixel_ratio</span><span class="p">,</span><span class="w"> </span><span class="n">pos_accuracy</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">loss</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h3 id="maskrcnn_up4conv_gn_head">maskrcnn_up4conv_gn_head</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">maskrcnn_up4conv_gn_head</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">maskrcnn_up4conv_gn_head</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="n">maskrcnn_upXconv_head</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">num_convs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s1">&#39;GN&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
+
+</details>
+<h3 id="maskrcnn_up4conv_head">maskrcnn_up4conv_head</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">maskrcnn_up4conv_head</span><span class="p">(</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="n">def</span> <span class="n">maskrcnn_up4conv_head</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="n">maskrcnn_upXconv_head</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">num_convs</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
+
+</details>
+<h3 id="maskrcnn_upxconv_head">maskrcnn_upXconv_head</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">maskrcnn_upXconv_head</span><span class="p">(</span>
+    <span class="n">feature</span><span class="p">,</span>
+    <span class="n">num_category</span><span class="p">,</span>
+    <span class="n">num_convs</span><span class="p">,</span>
+    <span class="n">norm</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Args:
+    feature (NxCx s x s): size is 7 in C4 models and 14 in FPN models.
+    num_category(int):
+    num_convs (int): number of convolution layers
+    norm (str or None): either None or 'GN'</p>
+<p>Returns:
+    mask_logits (N x num_category x 2s x 2s):</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="nv">@layer_register</span><span class="p">(</span><span class="n">log_shape</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="w"></span>
+
+<span class="n">def</span><span class="w"> </span><span class="n">maskrcnn_upXconv_head</span><span class="p">(</span><span class="n">feature</span><span class="p">,</span><span class="w"> </span><span class="n">num_category</span><span class="p">,</span><span class="w"> </span><span class="n">num_convs</span><span class="p">,</span><span class="w"> </span><span class="n">norm</span><span class="o">=</span><span class="k">None</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">    </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">    Args:</span>
+
+<span class="ss">        feature (NxCx s x s): size is 7 in C4 models and 14 in FPN models.</span>
+
+<span class="ss">        num_category(int):</span>
+
+<span class="ss">        num_convs (int): number of convolution layers</span>
+
+<span class="ss">        norm (str or None): either None or &#39;GN&#39;</span>
+
+<span class="ss">    Returns:</span>
+
+<span class="ss">        mask_logits (N x num_category x 2s x 2s):</span>
+
+<span class="ss">    &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">assert</span><span class="w"> </span><span class="n">norm</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="o">[</span><span class="n">None, &#39;GN&#39;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">norm</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">feature</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">with</span><span class="w"> </span><span class="n">argscope</span><span class="p">(</span><span class="o">[</span><span class="n">Conv2D, Conv2DTranspose</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">data_format</span><span class="o">=</span><span class="s1">&#39;channels_first&#39;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">                  </span><span class="n">kernel_initializer</span><span class="o">=</span><span class="n">tf</span><span class="p">.</span><span class="n">variance_scaling_initializer</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">                      </span><span class="n">scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;fan_out&#39;</span><span class="p">,</span><span class="w"></span>
+
+<span class="w">                      </span><span class="n">distribution</span><span class="o">=</span><span class="s1">&#39;untruncated_normal&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">get_tf_version_tuple</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;normal&#39;</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">c2</span><span class="s1">&#39;s MSRAFill is fan_out</span>
+
+<span class="s1">        for k in range(num_convs):</span>
+
+<span class="s1">            l = Conv2D(&#39;</span><span class="n">fcn</span><span class="err">{}</span><span class="s1">&#39;.format(k), l, cfg.MRCNN.HEAD_DIM, 3, activation=tf.nn.relu)</span>
+
+<span class="s1">            if norm is not None:</span>
+
+<span class="s1">                l = GroupNorm(&#39;</span><span class="n">gn</span><span class="err">{}</span><span class="s1">&#39;.format(k), l)</span>
+
+<span class="s1">        l = Conv2DTranspose(&#39;</span><span class="n">deconv</span><span class="s1">&#39;, l, cfg.MRCNN.HEAD_DIM, 2, strides=2, activation=tf.nn.relu)</span>
+
+<span class="s1">        l = Conv2D(&#39;</span><span class="n">conv</span><span class="err">&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">num_category</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">kernel_initializer</span><span class="o">=</span><span class="n">tf</span><span class="p">.</span><span class="n">random_normal_initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.001</span><span class="p">))</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">l</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h3 id="unpackbits_masks">unpackbits_masks</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">unpackbits_masks</span><span class="p">(</span>
+    <span class="n">masks</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Args:
+    masks (Tensor): uint8 Tensor of shape N, H, W. The last dimension is packed bits.</p>
+<p>Returns:
+    masks (Tensor): bool Tensor of shape N, H, 8*W.</p>
+<p>This is a reverse operation of <code>np.packbits</code></p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="s s-Atom">def</span> <span class="nf">unpackbits_masks</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="s2">    Args:</span>
+
+<span class="s2">        masks (Tensor): uint8 Tensor of shape N, H, W. The last dimension is packed bits.</span>
+
+<span class="s2">    Returns:</span>
+
+<span class="s2">        masks (Tensor): bool Tensor of shape N, H, 8*W.</span>
+
+<span class="s2">    This is a reverse operation of `np.packbits`</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">assert</span> <span class="s s-Atom">masks</span><span class="p">.</span><span class="s s-Atom">dtype</span> <span class="o">==</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">uint8</span><span class="p">,</span> <span class="s s-Atom">masks</span>
+
+    <span class="s s-Atom">bits</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">constant</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s s-Atom">dtype</span><span class="o">=</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">uint8</span><span class="p">)</span>
+
+    <span class="s s-Atom">unpacked</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="s s-Atom">bitwise</span><span class="p">.</span><span class="nf">bitwise_and</span><span class="p">(</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">expand_dims</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="s s-Atom">bits</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+    <span class="s s-Atom">unpacked</span> <span class="o">=</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">reshape</span><span class="p">(</span>
+
+        <span class="s s-Atom">unpacked</span><span class="p">,</span>
+
+        <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">concat</span><span class="p">([</span><span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">shape</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">)[:-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span> <span class="o">*</span> <span class="s s-Atom">tf</span><span class="p">.</span><span class="nf">shape</span><span class="p">(</span><span class="s s-Atom">masks</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]]],</span> <span class="s s-Atom">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+
+    <span class="s s-Atom">return</span> <span class="s s-Atom">unpacked</span>
+</pre></div>
+
+
+</details>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../model_frcnn/" title="Model Frcnn" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Model Frcnn
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../model_rpn/" title="Model Rpn" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Model Rpn
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../../.."}})</script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1753 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Dataset - mot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../../../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#module-motobject_detectiondatasetdataset" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../../.." title="mot" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              mot
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Dataset
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/surfriderfoundationeurope/mot/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    mot
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../../.." title="mot" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    mot
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/surfriderfoundationeurope/mot/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    mot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Mot
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Mot
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2" type="checkbox" id="nav-3-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-2">
+      Object Detection
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-2">
+        Object Detection
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../common/" title="Common" class="md-nav__link">
+      Common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/" title="Data" class="md-nav__link">
+      Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../eval/" title="Eval" class="md-nav__link">
+      Eval
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../predict/" title="Predict" class="md-nav__link">
+      Predict
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../preprocessing/" title="Preprocessing" class="md-nav__link">
+      Preprocessing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../query_server/" title="Query Server" class="md-nav__link">
+      Query Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../train/" title="Train" class="md-nav__link">
+      Train
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../viz/" title="Viz" class="md-nav__link">
+      Viz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-11" type="checkbox" id="nav-3-1-2-11" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-2-11">
+      Dataset
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-11">
+        Dataset
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dataset
+      </label>
+    
+    <a href="./" title="Dataset" class="md-nav__link md-nav__link--active">
+      Dataset
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datasetregistry" class="md-nav__link">
+    DatasetRegistry
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_metadata" class="md-nav__link">
+    get_metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    register
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register_metadata" class="md-nav__link">
+    register_metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datasetsplit" class="md-nav__link">
+    DatasetSplit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eval_inference_results" class="md-nav__link">
+    eval_inference_results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference_roidbs" class="md-nav__link">
+    inference_roidbs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training_roidbs" class="md-nav__link">
+    training_roidbs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mot/" title="Mot" class="md-nav__link">
+      Mot
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-12" type="checkbox" id="nav-3-1-2-12">
+    
+    <label class="md-nav__link" for="nav-3-1-2-12">
+      Modeling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-12">
+        Modeling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/backbone/" title="Backbone" class="md-nav__link">
+      Backbone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/generalized_rcnn/" title="Generalized Rcnn" class="md-nav__link">
+      Generalized Rcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/model_box/" title="Model Box" class="md-nav__link">
+      Model Box
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/model_cascade/" title="Model Cascade" class="md-nav__link">
+      Model Cascade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/model_fpn/" title="Model Fpn" class="md-nav__link">
+      Model Fpn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/model_frcnn/" title="Model Frcnn" class="md-nav__link">
+      Model Frcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/model_mrcnn/" title="Model Mrcnn" class="md-nav__link">
+      Model Mrcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../modeling/model_rpn/" title="Model Rpn" class="md-nav__link">
+      Model Rpn
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-13" type="checkbox" id="nav-3-1-2-13">
+    
+    <label class="md-nav__link" for="nav-3-1-2-13">
+      Utils
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-13">
+        Utils
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/box_ops/" title="Box Ops" class="md-nav__link">
+      Box Ops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/np_box_ops/" title="Np Box Ops" class="md-nav__link">
+      Np Box Ops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-3" type="checkbox" id="nav-3-1-3">
+    
+    <label class="md-nav__link" for="nav-3-1-3">
+      Serving
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-3">
+        Serving
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../serving/app/" title="App" class="md-nav__link">
+      App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../serving/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../serving/inference/" title="Inference" class="md-nav__link">
+      Inference
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-4" type="checkbox" id="nav-3-1-4">
+    
+    <label class="md-nav__link" for="nav-3-1-4">
+      Tracker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-4">
+        Tracker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/camera_flow/" title="Camera Flow" class="md-nav__link">
+      Camera Flow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/tracker/" title="Tracker" class="md-nav__link">
+      Tracker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/video_utils/" title="Video Utils" class="md-nav__link">
+      Video Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datasetregistry" class="md-nav__link">
+    DatasetRegistry
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-methods" class="md-nav__link">
+    Static methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get" class="md-nav__link">
+    get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_metadata" class="md-nav__link">
+    get_metadata
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register" class="md-nav__link">
+    register
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register_metadata" class="md-nav__link">
+    register_metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datasetsplit" class="md-nav__link">
+    DatasetSplit
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eval_inference_results" class="md-nav__link">
+    eval_inference_results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inference_roidbs" class="md-nav__link">
+    inference_roidbs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training_roidbs" class="md-nav__link">
+    training_roidbs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/surfriderfoundationeurope/mot/edit/master/reference/mot/object_detection/dataset/dataset.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="module-motobject_detectiondatasetdataset">Module mot.object_detection.dataset.dataset</h1>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="k">class</span> <span class="nc">DatasetSplit</span><span class="p">():</span>
+
+    <span class="sd">&quot;&quot;&quot;A class to load datasets, evaluate results for a datast split (e.g., &quot;coco_train_2017&quot;)</span>
+
+<span class="sd">    To use your own dataset that&#39;s not in COCO format, write a subclass that</span>
+
+<span class="sd">    implements the interfaces.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">training_roidbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - *(list[dict])*: Produce &quot;roidbs&quot; as a list of dict, each dict corresponds to one image with k&gt;=0 instances.</span>
+
+<span class="sd">            and the following keys are expected for training:</span>
+
+<span class="sd">            - file_name: str, full path to the image</span>
+
+<span class="sd">            - boxes: numpy array of kx4 floats, each row is [x1, y1, x2, y2]</span>
+
+<span class="sd">            - class: numpy array of k integers, in the range of [1, #categories], NOT [0, #categories)</span>
+
+<span class="sd">            - is_crowd: numpy array of k 0 or 1. Use k False if you don&#39;t know what it means.</span>
+
+<span class="sd">            - segmentation: k lists of numpy arrays (one for each instance).</span>
+
+<span class="sd">                Each list of numpy arrays corresponds to the mask for one instance.</span>
+
+<span class="sd">                Each numpy array in the list is a polygon of shape Nx2,</span>
+
+<span class="sd">                because one mask can be represented by N polygons.</span>
+
+<span class="sd">                Each row in the Nx2 array is a (x, y) coordinate.</span>
+
+<span class="sd">                If your segmentation annotations are originally masks rather than polygons,</span>
+
+<span class="sd">                either convert it, or the augmentation will need to be changed or skipped accordingly.</span>
+
+<span class="sd">                Include this field only if training Mask R-CNN.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">inference_roidbs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - *(list[dict])*: Each dict corresponds to one image to run inference on. The</span>
+
+<span class="sd">            following keys in the dict are expected:</span>
+
+<span class="sd">            - file_name (str): full path to the image</span>
+
+<span class="sd">            - image_id (str): an id for the image. The inference results will be stored with this id.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">eval_inference_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">results</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">output</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Arguments:</span>
+
+<span class="sd">        - *results*: (list[dict]): the inference results as dicts.</span>
+
+<span class="sd">            Each dict corresponds to one __instance__. It contains the following keys:</span>
+
+<span class="sd">            - image_id (str): the id that matches `inference_roidbs`.</span>
+
+<span class="sd">            - category_id (int): the category prediction, in range [1, #category]</span>
+
+<span class="sd">            - bbox (list[float]): x1, y1, x2, y2</span>
+
+<span class="sd">            - score (float):</span>
+
+<span class="sd">            - segmentation: the segmentation mask in COCO&#39;s rle format.</span>
+
+<span class="sd">        - *output*: (str): the output file or directory to optionally save the results to.</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - dict: the evaluation results.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">DatasetRegistry</span><span class="p">():</span>
+
+    <span class="n">_registry</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="n">_metadata_registry</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Arguments:</span>
+
+<span class="sd">        - *name*: the name of the dataset split, e.g. &quot;coco_train2017&quot;</span>
+
+<span class="sd">        - *func*: a function which returns an instance of `DatasetSplit`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">assert</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">DatasetRegistry</span><span class="o">.</span><span class="n">_registry</span><span class="p">,</span> <span class="s2">&quot;Dataset {} was registered already!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+
+            <span class="n">name</span>
+
+        <span class="p">)</span>
+
+        <span class="n">DatasetRegistry</span><span class="o">.</span><span class="n">_registry</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Arguments:</span>
+
+<span class="sd">        - *name*: the name of the dataset split, e.g. &quot;coco_train2017&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - *DatasetSplit*</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">assert</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">DatasetRegistry</span><span class="o">.</span><span class="n">_registry</span><span class="p">,</span> <span class="s2">&quot;Dataset {} was not registered!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">DatasetRegistry</span><span class="o">.</span><span class="n">_registry</span><span class="p">[</span><span class="n">name</span><span class="p">]()</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">register_metadata</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Arguments:</span>
+
+<span class="sd">        - *name*: the name of the dataset split, e.g. &quot;coco_train2017&quot;</span>
+
+<span class="sd">        - *key*: the key of the metadata, e.g., &quot;class_names&quot;</span>
+
+<span class="sd">        - *value*: the value of the metadata</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">DatasetRegistry</span><span class="o">.</span><span class="n">_metadata_registry</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@staticmethod</span>
+
+    <span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Arguments:</span>
+
+<span class="sd">        - *name*: the name of the dataset split, e.g. &quot;coco_train2017&quot;</span>
+
+<span class="sd">        - *key*: the key of the metadata, e.g., &quot;class_names&quot;</span>
+
+<span class="sd">        Returns:</span>
+
+<span class="sd">        - *value*</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">return</span> <span class="n">DatasetRegistry</span><span class="o">.</span><span class="n">_metadata_registry</span><span class="p">[</span><span class="n">name</span><span class="p">][</span><span class="n">key</span><span class="p">]</span>
+</pre></div>
+
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="datasetregistry">DatasetRegistry</h3>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">DatasetRegistry</span><span class="p">(</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<h4 id="static-methods">Static methods</h4>
+<h5 id="get">get</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get</span><span class="p">(</span>
+    <span class="n">name</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Arguments:</p>
+<ul>
+<li><em>name</em>: the name of the dataset split, e.g. "coco_train2017"</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><em>DatasetSplit</em></li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="k">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Arguments:</span>
+
+<span class="ss">        - *name*: the name of the dataset split, e.g. &quot;</span><span class="n">coco_train2017</span><span class="ss">&quot;</span>
+
+<span class="ss">        Returns:</span>
+
+<span class="ss">        - *DatasetSplit*</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">assert</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">DatasetRegistry</span><span class="p">.</span><span class="n">_registry</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Dataset {} was not registered!&quot;</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">DatasetRegistry</span><span class="p">.</span><span class="n">_registry</span><span class="o">[</span><span class="n">name</span><span class="o">]</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h5 id="get_metadata">get_metadata</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_metadata</span><span class="p">(</span>
+    <span class="n">name</span><span class="p">,</span>
+    <span class="n">key</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Arguments:</p>
+<ul>
+<li><em>name</em>: the name of the dataset split, e.g. "coco_train2017"</li>
+<li><em>key</em>: the key of the metadata, e.g., "class_names"</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li><em>value</em></li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">get_metadata</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">key</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Arguments:</span>
+
+<span class="ss">        - *name*: the name of the dataset split, e.g. &quot;</span><span class="n">coco_train2017</span><span class="ss">&quot;</span>
+
+<span class="ss">        - *key*: the key of the metadata, e.g., &quot;</span><span class="n">class_names</span><span class="ss">&quot;</span>
+
+<span class="ss">        Returns:</span>
+
+<span class="ss">        - *value*</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">DatasetRegistry</span><span class="p">.</span><span class="n">_metadata_registry</span><span class="o">[</span><span class="n">name</span><span class="o">][</span><span class="n">key</span><span class="o">]</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h5 id="register">register</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">register</span><span class="p">(</span>
+    <span class="n">name</span><span class="p">,</span>
+    <span class="n">func</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Arguments:</p>
+<ul>
+<li><em>name</em>: the name of the dataset split, e.g. "coco_train2017"</li>
+<li><em>func</em>: a function which returns an instance of <code>DatasetSplit</code></li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">register</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">func</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Arguments:</span>
+
+<span class="ss">        - *name*: the name of the dataset split, e.g. &quot;</span><span class="n">coco_train2017</span><span class="ss">&quot;</span>
+
+<span class="ss">        - *func*: a function which returns an instance of `DatasetSplit`</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">assert</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">DatasetRegistry</span><span class="p">.</span><span class="n">_registry</span><span class="p">,</span><span class="w"> </span><span class="ss">&quot;Dataset {} was registered already!&quot;</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="w"></span>
+
+<span class="w">            </span><span class="n">name</span><span class="w"></span>
+
+<span class="w">        </span><span class="p">)</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">DatasetRegistry</span><span class="p">.</span><span class="n">_registry</span><span class="o">[</span><span class="n">name</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">func</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h5 id="register_metadata">register_metadata</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">register_metadata</span><span class="p">(</span>
+    <span class="n">name</span><span class="p">,</span>
+    <span class="n">key</span><span class="p">,</span>
+    <span class="n">value</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Arguments:</p>
+<ul>
+<li><em>name</em>: the name of the dataset split, e.g. "coco_train2017"</li>
+<li><em>key</em>: the key of the metadata, e.g., "class_names"</li>
+<li><em>value</em>: the value of the metadata</li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="nv">@staticmethod</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">register_metadata</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Arguments:</span>
+
+<span class="ss">        - *name*: the name of the dataset split, e.g. &quot;</span><span class="n">coco_train2017</span><span class="ss">&quot;</span>
+
+<span class="ss">        - *key*: the key of the metadata, e.g., &quot;</span><span class="n">class_names</span><span class="ss">&quot;</span>
+
+<span class="ss">        - *value*: the value of the metadata</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">DatasetRegistry</span><span class="p">.</span><span class="n">_metadata_registry</span><span class="o">[</span><span class="n">name</span><span class="o">][</span><span class="n">key</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h3 id="datasetsplit">DatasetSplit</h3>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">DatasetSplit</span><span class="p">(</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>A class to load datasets, evaluate results for a datast split (e.g., "coco_train_2017")</p>
+<p>To use your own dataset that's not in COCO format, write a subclass that
+implements the interfaces.</p>
+<h4 id="methods">Methods</h4>
+<h5 id="eval_inference_results">eval_inference_results</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">eval_inference_results</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">results</span><span class="p">:</span><span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span>
+    <span class="n">output</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Arguments:</p>
+<ul>
+<li>
+<p><em>results</em>: (list[dict]): the inference results as dicts.
+    Each dict corresponds to one <strong>instance</strong>. It contains the following keys:</p>
+<ul>
+<li>image_id (str): the id that matches <code>inference_roidbs</code>.</li>
+<li>category_id (int): the category prediction, in range [1, #category]</li>
+<li>bbox (list[float]): x1, y1, x2, y2</li>
+<li>score (float):</li>
+<li>segmentation: the segmentation mask in COCO's rle format.</li>
+<li><em>output</em>: (str): the output file or directory to optionally save the results to.</li>
+</ul>
+</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>dict: the evaluation results.</li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">eval_inference_results</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">results</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">[</span><span class="n">dict</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="k">output</span><span class="err">:</span><span class="w"> </span><span class="nf">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">None</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Arguments:</span>
+
+<span class="ss">        - *results*: (list[dict]): the inference results as dicts.</span>
+
+<span class="ss">            Each dict corresponds to one __instance__. It contains the following keys:</span>
+
+<span class="ss">            - image_id (str): the id that matches `inference_roidbs`.</span>
+
+<span class="ss">            - category_id (int): the category prediction, in range [1, #category]</span>
+
+<span class="ss">            - bbox (list[float]): x1, y1, x2, y2</span>
+
+<span class="ss">            - score (float):</span>
+
+<span class="ss">            - segmentation: the segmentation mask in COCO&#39;s rle format.</span>
+
+<span class="ss">        - *output*: (str): the output file or directory to optionally save the results to.</span>
+
+<span class="ss">        Returns:</span>
+
+<span class="ss">        - dict: the evaluation results.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">raise</span><span class="w"> </span><span class="n">NotImplementedError</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h5 id="inference_roidbs">inference_roidbs</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">inference_roidbs</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Returns:</p>
+<ul>
+<li>
+<p><em>(list[dict])</em>: Each dict corresponds to one image to run inference on. The
+    following keys in the dict are expected:</p>
+<ul>
+<li>file_name (str): full path to the image</li>
+<li>image_id (str): an id for the image. The inference results will be stored with this id.</li>
+</ul>
+</li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">inference_roidbs</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Returns:</span>
+
+<span class="ss">        - *(list[dict])*: Each dict corresponds to one image to run inference on. The</span>
+
+<span class="ss">            following keys in the dict are expected:</span>
+
+<span class="ss">            - file_name (str): full path to the image</span>
+
+<span class="ss">            - image_id (str): an id for the image. The inference results will be stored with this id.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">raise</span><span class="w"> </span><span class="n">NotImplementedError</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+<h5 id="training_roidbs">training_roidbs</h5>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">training_roidbs</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Returns:</p>
+<ul>
+<li>
+<p><em>(list[dict])</em>: Produce "roidbs" as a list of dict, each dict corresponds to one image with k&gt;=0 instances.
+    and the following keys are expected for training:</p>
+<ul>
+<li>file_name: str, full path to the image</li>
+<li>boxes: numpy array of kx4 floats, each row is [x1, y1, x2, y2]</li>
+<li>class: numpy array of k integers, in the range of [1, #categories], NOT [0, #categories)</li>
+<li>is_crowd: numpy array of k 0 or 1. Use k False if you don't know what it means.</li>
+<li>
+<p>segmentation: k lists of numpy arrays (one for each instance).
+    Each list of numpy arrays corresponds to the mask for one instance.
+    Each numpy array in the list is a polygon of shape Nx2,
+    because one mask can be represented by N polygons.
+    Each row in the Nx2 array is a (x, y) coordinate.</p>
+<p>If your segmentation annotations are originally masks rather than polygons,
+either convert it, or the augmentation will need to be changed or skipped accordingly.</p>
+<p>Include this field only if training Mask R-CNN.</p>
+</li>
+</ul>
+</li>
+</ul>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">training_roidbs</span><span class="p">(</span><span class="n">self</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+
+<span class="w">        </span><span class="ss">&quot;&quot;&quot;</span>
+
+<span class="ss">        Returns:</span>
+
+<span class="ss">        - *(list[dict])*: Produce &quot;</span><span class="n">roidbs</span><span class="ss">&quot; as a list of dict, each dict corresponds to one image with k&gt;=0 instances.</span>
+
+<span class="ss">            and the following keys are expected for training:</span>
+
+<span class="ss">            - file_name: str, full path to the image</span>
+
+<span class="ss">            - boxes: numpy array of kx4 floats, each row is [x1, y1, x2, y2]</span>
+
+<span class="ss">            - class: numpy array of k integers, in the range of [1, #categories], NOT [0, #categories)</span>
+
+<span class="ss">            - is_crowd: numpy array of k 0 or 1. Use k False if you don&#39;t know what it means.</span>
+
+<span class="ss">            - segmentation: k lists of numpy arrays (one for each instance).</span>
+
+<span class="ss">                Each list of numpy arrays corresponds to the mask for one instance.</span>
+
+<span class="ss">                Each numpy array in the list is a polygon of shape Nx2,</span>
+
+<span class="ss">                because one mask can be represented by N polygons.</span>
+
+<span class="ss">                Each row in the Nx2 array is a (x, y) coordinate.</span>
+
+<span class="ss">                If your segmentation annotations are originally masks rather than polygons,</span>
+
+<span class="ss">                either convert it, or the augmentation will need to be changed or skipped accordingly.</span>
+
+<span class="ss">                Include this field only if training Mask R-CNN.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">raise</span><span class="w"> </span><span class="n">NotImplementedError</span><span class="p">()</span><span class="w"></span>
+</pre></div>
+
+
+</details>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../viz/" title="Viz" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Viz
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Index
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../../.."}})</script>
+      
+    
+  </body>
+</html>
