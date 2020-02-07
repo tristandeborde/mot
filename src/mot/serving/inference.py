@@ -16,11 +16,12 @@ from mot.object_detection.query_server import \
     localizer_tensorflow_serving_inference
 from mot.tracker.tracker import ObjectTracking
 from mot.tracker.video_utils import read_folder, split_video
+from mot.tracker import video_visu
 
 SERVING_URL = "http://localhost:8501"  # the url where the tf-serving container exposes the model
 UPLOAD_FOLDER = 'tmp'  # folder used to store images or videos when sending files
 FPS = 4
-RESOLUTION = (1024, 768)
+RESOLUTION = (1920, 1080)
 CLASS_NAMES = ["bottles", "others", "fragments"]
 CLASS_TO_THRESHOLD = {"bottles": 0.4, "others": 0.3, "fragments": 0.3}
 CPU_COUNT = min(multiprocessing.cpu_count(), 32)
@@ -180,11 +181,11 @@ def handle_file(file: FileStorage,
         tracking_result = object_tracker.json_result()
 
         # Draw results on images // TODO: test on smic
-        visu = video_visu.VideoVisu(1920, 1080, 30, tracking_result)
+        visu = video_visu.VideoVisu(1920, 1080, 4, tracking_result)
         visu.process_tracking_result()
         video = cv2.VideoWriter('output.mp4',-1,1,(1920, 1080))
         for ix, path in enumerate(image_paths):
-            cv2.imread(path)
+            im = cv2.imread(path)
             visu.draw_all(im, ix)
             video.write(im)
         return send_file("output.mp4", "video/mp4")
